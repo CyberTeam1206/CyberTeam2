@@ -4,11 +4,11 @@ import Grid from '@material-ui/core/Grid';
 
 import Scream from '../components/Scream';
 export class home extends Component {
-    state ={
-        screams :null
-    }
+    state = {
+        screams: null
+    };
     componentDidMount() {
-axios.get('/screams')
+axios.get('../Handlers/screams')
     .then(res =>{
         console.log(res.data)
 this.setState({
@@ -24,7 +24,7 @@ this.setState({
         ) :(
             <p>Loading...</p>);
         return (
-          <Grid container spacing={16}>
+          <Grid container spacing={8}>
               <Grid item sm={8} xs={12}>
                   {recentScreamsMarkup}
               </Grid>
